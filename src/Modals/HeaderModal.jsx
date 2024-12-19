@@ -25,7 +25,7 @@ const HeaderModal = () => {
           <SheetDescription>
             <ul className="flex flex-col gap-5 items-start text-2xl mt-5">
               <li>
-                <Link to={"/"}>الرئيسية</Link>
+                <Link to={"/home"}>الرئيسية</Link>
               </li>
               <li>
                 <Link to={"/products"}>المنتجات</Link>
