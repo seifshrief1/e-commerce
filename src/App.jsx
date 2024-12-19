@@ -1,4 +1,4 @@
-import { Route, Routes, Redirect } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails";
 import { useEffect, useState } from "react";
 import Shop from "./pages/Shop";
@@ -42,8 +42,7 @@ function App() {
           <ToastContainer />
           <Navbar />
           <Routes>
-            <Route exact path="/" render={() => <Redirect to="/home" />} />
-            <Route path="/home" element={Home} />
+            <Route path="/" element={<Home />} />
             <Route path="/productDetails/:id" element={<ProductDetails />} />
             <Route path="/products" element={<Shop />} />
             <Route path="/create-product" element={<CreateProduct />} />
