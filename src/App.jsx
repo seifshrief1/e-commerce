@@ -42,7 +42,7 @@ function App() {
           <ToastContainer />
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/e-commerce" element={<Home />} />
             <Route path="/productDetails/:id" element={<ProductDetails />} />
             <Route path="/products" element={<Shop />} />
             <Route path="/create-product" element={<CreateProduct />} />
