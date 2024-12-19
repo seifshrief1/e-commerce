@@ -74,7 +74,11 @@ const ProductDetails = () => {
               الضمان: {product.warrantyInformation}
             </p>
             <p className="flex gap-2 items-center mb-2 text-gray-500">
-              سعر الشحن: {Number(product.shippingPrice).toFixed(2)}
+              {!product.shippingPrice ? (
+                <p>سعر الشحن: مجاني</p>
+              ) : (
+                <p>سعر الشحن: {Number(product.shippingPrice).toFixed(2)}</p>
+              )}
             </p>
             <hr />
             <div className="flex justify-between gap-2 mt-5">

@@ -38,21 +38,29 @@ const SummaryCart = () => {
         <div className="flex justify-between items-center">
           <span>الشحن:</span>
           <span className="font-semibold">
-            {cart.reduce((acc, item) => acc + Number(item.shippingPrice), 0)}$
+            {cart.reduce(
+              (acc, item) =>
+                acc + !item.shippingPrice ? 0 : Number(item.shippingPrice),
+              0
+            )}
+            $
           </span>
         </div>
         <hr className="border-gray-300 my-2" />
         <div className="flex justify-between items-center text-xl font-bold">
           <span>الإجمالي:</span>
           <span className="text-green-600">
-            {cart.reduce(
-              (acc, item) =>
-                acc +
-                item.price * item.quantity +
-                Number(item.shippingPrice) -
-                (item.price * item.discountPercentage) / 100,
-              0
-            )}
+            {cart
+              .reduce(
+                (acc, item) =>
+                  acc +
+                  item.price *
+                    item.quantity *
+                    (1 - item.discountPercentage / 100) +
+                  (item.shippingPrice || 0),
+                0
+              )
+              .toFixed(2)}
             $
           </span>
         </div>
