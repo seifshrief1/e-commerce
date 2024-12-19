@@ -33,7 +33,7 @@ const Navbar = () => {
         </Link>
         <ul className="md:flex hidden gap-5 items-center">
           <li className="hover:text-indigo-500 duration-300">
-            <Link to={"/e-commerce"}>الرئيسية</Link>
+            <Link to={"/"}>الرئيسية</Link>
           </li>
           <li className="hover:text-indigo-500 duration-300">
             <Link to={"/products"}>المنتجات</Link>
